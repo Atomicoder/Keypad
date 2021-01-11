@@ -11,16 +11,16 @@ Gui, Hide
 return
 
 ~^c::
-    osdShow("1")
+    osdShow("2")
 return
 
 ~^v:: 
-    osdShow("a")
+    osdShow("b")
 Return
 
 osdShow(comText){
     GuiControl,, MyText, %comText%
-    Gui, Show
+    Gui, Show, NoActivate
     Sleep, 2000
     Gui, Hide
 
