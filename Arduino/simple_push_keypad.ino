@@ -116,7 +116,7 @@ void loop()
     {
 
       // Keyboard.press(KEY_LEFT_CTRL);
-      // Keyboard.press(KEY_LEFT_SHIFT);
+      // Keyboard.press(KEY_LEFT_ALT);
       // Keyboard.press(KEY_RIGHT_ARROW);
       // delay(70);
       // Keyboard.releaseAll();
@@ -136,7 +136,7 @@ void loop()
     {
 
       // Keyboard.press(KEY_LEFT_CTRL);
-      // Keyboard.press(KEY_LEFT_SHIFT);
+      // Keyboard.press(KEY_LEFT_ALT);
       // Keyboard.press(KEY_LEFT_ARROW);
       // delay(70);
       // Keyboard.releaseAll();
@@ -431,11 +431,13 @@ void singleThree()
   switch (mode)
   {
   case 1:
+
     Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press(KEY_LEFT_SHIFT);
-    Keyboard.press(KEYPAD_1);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(225);
     delay(70);
     Keyboard.releaseAll();
+
     break;
   case 2:
     //-------------
@@ -448,11 +450,13 @@ void doubleThree()
   switch (mode)
   {
   case 1:
+
     Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press(KEY_LEFT_SHIFT);
-    Keyboard.press(KEYPAD_2);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(226);
     delay(70);
     Keyboard.releaseAll();
+
     break;
   case 2:
     //-------------
@@ -466,8 +470,8 @@ void tripleThree()
   {
   case 1:
     Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press(KEY_LEFT_SHIFT);
-    Keyboard.press(KEYPAD_3);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(227);
     delay(70);
     Keyboard.releaseAll();
     break;
@@ -499,11 +503,69 @@ void singleFour()
     //-------------
     break;
   case 2:
-    //-------------
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('t');
+    delay(70);
+    Keyboard.releaseAll();
     break;
   }
 }
 
+void doubleFour()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('y');
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  }
+}
+
+void tripleFour()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press('y');
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  }
+}
+
+void longFour()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('y');
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  }
+}
+
+//Button 5
 void singleFive()
 {
   switch (mode)
@@ -517,6 +579,48 @@ void singleFive()
   }
 }
 
+void doubleFive()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+void tripleFive()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+void longFive()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press('[');
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  }
+}
+
 //Button 6
 void singleSix()
 {
@@ -524,8 +628,8 @@ void singleSix()
   {
   case 1:
     Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press(KEY_LEFT_SHIFT);
-    Keyboard.press(KEYPAD_4);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(228);
     delay(70);
     Keyboard.releaseAll();
     break;
@@ -541,8 +645,8 @@ void doubleSix()
   {
   case 1:
     Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press(KEY_LEFT_SHIFT);
-    Keyboard.press(KEYPAD_5);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(229);
     delay(70);
     Keyboard.releaseAll();
     break;
@@ -558,8 +662,8 @@ void tripleSix()
   {
   case 1:
     Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press(KEY_LEFT_SHIFT);
-    Keyboard.press(KEYPAD_6);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(230);
     delay(70);
     Keyboard.releaseAll();
     break;
@@ -575,13 +679,16 @@ void longSix()
   {
   case 1:
     Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press(KEY_LEFT_SHIFT);
-    Keyboard.press(KEYPAD_7);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(231);
     delay(70);
     Keyboard.releaseAll();
     break;
   case 2:
-    //-------------
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(']');
+    delay(70);
+    Keyboard.releaseAll();
     break;
   }
 }
@@ -593,7 +700,11 @@ void singleSeven()
   switch (mode)
   {
   case 1:
-    //-------------
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(232);
+    delay(70);
+    Keyboard.releaseAll();
     break;
   case 2:
     //-------------
@@ -666,12 +777,64 @@ void singleNine()
   }
 }
 
+//Button 10
 void singleTen()
 {
   switch (mode)
   {
   case 1:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(225);
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  case 2:
     //-------------
+    break;
+  }
+}
+
+void doubleTen()
+{
+  switch (mode)
+  {
+  case 1:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(226);
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+void tripleTen()
+{
+  switch (mode)
+  {
+  case 1:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(227);
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+void longTen()
+{
+  switch (mode)
+  {
+  case 1:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(229);
+    delay(70);
+    Keyboard.releaseAll();
     break;
   case 2:
     //-------------
@@ -682,32 +845,6 @@ void singleTen()
 // Double Click
 
 void doubleTwo()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
-void doubleFour()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
-void doubleFive()
 {
   switch (mode)
   {
@@ -746,48 +883,9 @@ void doubleNine()
   }
 }
 
-void doubleTen()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
 // triple Click
 
 void tripleTwo()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
-void tripleFour()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
-void tripleFive()
 {
   switch (mode)
   {
@@ -826,47 +924,9 @@ void tripleNine()
   }
 }
 
-void tripleTen()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
 // Long Click
 
 void longTwo()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
-void longFour()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
-void longFive()
 {
   switch (mode)
   {
@@ -893,19 +953,6 @@ void longEight()
 }
 
 void longNine()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
-void longTen()
 {
   switch (mode)
   {
