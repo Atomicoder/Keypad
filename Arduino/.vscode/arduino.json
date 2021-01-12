@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:micro",
+    "port": "COM5",
+    "sketch": "simple_push_keypad.ino",
+    "programmer": "AVR ISP"
+}

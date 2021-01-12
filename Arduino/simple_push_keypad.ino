@@ -1,4 +1,4 @@
-//#include <Keyboard.h>
+#include <Keyboard.h>
 
 #include <SimpleRotary.h>
 
@@ -36,15 +36,15 @@ SimpleRotary rotary2(rot2a, rot2b, 15);
 void setup()
 {
 
-  digitalWrite(led, HIGH);
-  delay(500);
-  digitalWrite(led, LOW);
-  delay(500);
-  digitalWrite(led, HIGH);
-  delay(500);
-  digitalWrite(led, LOW);
+  // digitalWrite(led, HIGH);
+  // delay(500);
+  // digitalWrite(led, LOW);
+  // delay(500);
+  // digitalWrite(led, HIGH);
+  // delay(500);
+  // digitalWrite(led, LOW);
 
-  Serial.begin(9600);
+  //Serial.begin(9600);
 
   butt1.setClickHandler(handler1);
   butt1.setDoubleClickHandler(handler1);
@@ -98,6 +98,8 @@ void setup()
 
   rotButt1.setClickHandler(handler11);
   rotButt2.setClickHandler(handler12);
+
+  Keyboard.begin();
 }
 
 void loop()
@@ -154,11 +156,11 @@ void loop()
   {
     if (fineRor2 == true)
     {
-      Serial.println("2CWx10");
+      //-------------
     }
     else
     {
-      Serial.println("2CcWx1");
+      //-------------
     }
   }
 
@@ -166,11 +168,11 @@ void loop()
   {
     if (fineRor2 == true)
     {
-      Serial.println("2CCWx10");
+      //-------------
     }
     else
     {
-      Serial.println("2CCWx1");
+      //-------------
     }
   }
 
@@ -195,19 +197,15 @@ void handler1(Button2 &btn)
   switch (btn.getClickType())
   {
   case SINGLE_CLICK:
-    Serial.print("Mode 1 ");
     mode = 1;
     break;
   case DOUBLE_CLICK:
-    Serial.print("Mode 2 ");
     mode = 2;
     break;
   case TRIPLE_CLICK:
-    Serial.print("Mode 3 ");
     mode = 3;
     break;
   case LONG_CLICK:
-    Serial.print("Mode 4 ");
     mode = 4;
     break;
   }
@@ -389,11 +387,11 @@ void handler11(Button2 &btn)
   switch (btn.getClickType())
   {
   case SINGLE_CLICK:
-    Serial.print("Click2 ");
+    //-------------
     fineRor1 = !fineRor1;
     break;
   case DOUBLE_CLICK:
-    Serial.print("double2 ");
+    //-------------
     break;
   }
 }
@@ -403,11 +401,11 @@ void handler12(Button2 &btn)
   switch (btn.getClickType())
   {
   case SINGLE_CLICK:
-    Serial.print("Click2 ");
+    //-------------
     fineRor2 = !fineRor2;
     break;
   case DOUBLE_CLICK:
-    Serial.print("double2 ");
+    //-------------
     break;
   }
 }
@@ -419,36 +417,89 @@ void singleTwo()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
+//Button 3
 
 void singleThree()
 {
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press(KEYPAD_1);
+    delay(70);
+    Keyboard.releaseAll();
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
 
+void doubleThree()
+{
+  switch (mode)
+  {
+  case 1:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press(KEYPAD_2);
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+void tripleThree()
+{
+  switch (mode)
+  {
+  case 1:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press(KEYPAD_3);
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+void longThree()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+//Button 4
 void singleFour()
 {
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
@@ -458,36 +509,133 @@ void singleFive()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
 
+//Button 6
 void singleSix()
 {
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press(KEYPAD_4);
+    delay(70);
+    Keyboard.releaseAll();
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
+
+void doubleSix()
+{
+  switch (mode)
+  {
+  case 1:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press(KEYPAD_5);
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+void tripleSix()
+{
+  switch (mode)
+  {
+  case 1:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press(KEYPAD_6);
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+void longSix()
+{
+  switch (mode)
+  {
+  case 1:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press(KEYPAD_7);
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+//Button 7
 
 void singleSeven()
 {
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
+    break;
+  }
+}
+
+void doubleSeven()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+void tripleSeven()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    //-------------
+    break;
+  }
+}
+
+void longSeven()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    //-------------
     break;
   }
 }
@@ -497,10 +645,10 @@ void singleEight()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
@@ -510,10 +658,10 @@ void singleNine()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
@@ -523,10 +671,10 @@ void singleTen()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
@@ -538,23 +686,10 @@ void doubleTwo()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
-    break;
-  }
-}
-
-void doubleThree()
-{
-  switch (mode)
-  {
-  case 1:
-    Serial.print("newClick ");
-    break;
-  case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
@@ -564,10 +699,10 @@ void doubleFour()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
@@ -577,36 +712,10 @@ void doubleFive()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
-    break;
-  }
-}
-
-void doubleSix()
-{
-  switch (mode)
-  {
-  case 1:
-    Serial.print("newClick ");
-    break;
-  case 2:
-    Serial.print("newDouble ");
-    break;
-  }
-}
-
-void doubleSeven()
-{
-  switch (mode)
-  {
-  case 1:
-    Serial.print("newClick ");
-    break;
-  case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
@@ -616,10 +725,10 @@ void doubleEight()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
@@ -629,10 +738,10 @@ void doubleNine()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
@@ -642,10 +751,10 @@ void doubleTen()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newDouble ");
+    //-------------
     break;
   }
 }
@@ -657,23 +766,10 @@ void tripleTwo()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
-    break;
-  }
-}
-
-void tripleThree()
-{
-  switch (mode)
-  {
-  case 1:
-    Serial.print("newClick ");
-    break;
-  case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -683,10 +779,10 @@ void tripleFour()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -696,36 +792,10 @@ void tripleFive()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
-    break;
-  }
-}
-
-void tripleSix()
-{
-  switch (mode)
-  {
-  case 1:
-    Serial.print("newClick ");
-    break;
-  case 2:
-    Serial.print("newtriple ");
-    break;
-  }
-}
-
-void tripleSeven()
-{
-  switch (mode)
-  {
-  case 1:
-    Serial.print("newClick ");
-    break;
-  case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -735,10 +805,10 @@ void tripleEight()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -748,10 +818,10 @@ void tripleNine()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -761,10 +831,10 @@ void tripleTen()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -775,23 +845,10 @@ void longTwo()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
-    break;
-  }
-}
-
-void longThree()
-{
-  switch (mode)
-  {
-  case 1:
-    Serial.print("newClick ");
-    break;
-  case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -801,10 +858,10 @@ void longFour()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -814,36 +871,10 @@ void longFive()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
-    break;
-  }
-}
-
-void longSix()
-{
-  switch (mode)
-  {
-  case 1:
-    Serial.print("newClick ");
-    break;
-  case 2:
-    Serial.print("newtriple ");
-    break;
-  }
-}
-
-void longSeven()
-{
-  switch (mode)
-  {
-  case 1:
-    Serial.print("newClick ");
-    break;
-  case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -853,10 +884,10 @@ void longEight()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -866,10 +897,10 @@ void longNine()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
@@ -879,10 +910,10 @@ void longTen()
   switch (mode)
   {
   case 1:
-    Serial.print("newClick ");
+    //-------------
     break;
   case 2:
-    Serial.print("newtriple ");
+    //-------------
     break;
   }
 }
