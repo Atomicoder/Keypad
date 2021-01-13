@@ -7,6 +7,8 @@
 bool fineRor1 = false;
 bool fineRor2 = false;
 
+String wheelMode = "time";
+
 int mode = 1;
 
 int led = 10;
@@ -114,12 +116,62 @@ void loop()
   {
     if (fineRor1 == true)
     {
-
-      // Keyboard.press(KEY_LEFT_CTRL);
-      // Keyboard.press(KEY_LEFT_ALT);
-      // Keyboard.press(KEY_RIGHT_ARROW);
-      // delay(70);
-      // Keyboard.releaseAll();
+      if (wheelMode == "time")
+      {
+        Keyboard.press(KEY_LEFT_CTRL);
+        Keyboard.press(KEY_LEFT_ALT);
+        Keyboard.press(KEY_RIGHT_ARROW);
+        delay(70);
+        Keyboard.releaseAll();
+      }
+      else if (wheelMode == "easy")
+      {
+        Keyboard.press(KEY_LEFT_CTRL);
+        Keyboard.press(KEY_LEFT_ALT);
+        Keyboard.press(KEY_RIGHT_ARROW);
+        delay(70);
+        Keyboard.releaseAll();
+      }
+      else if (wheelMode == "keys")
+      {
+        Keyboard.press(KEY_LEFT_CTRL);
+        Keyboard.press(KEY_LEFT_ALT);
+        Keyboard.press(KEY_RIGHT_ARROW);
+        delay(70);
+        Keyboard.releaseAll();
+      }
+      else if (wheelMode == "move")
+      {
+        Keyboard.press(KEY_LEFT_CTRL);
+        Keyboard.press(KEY_LEFT_ALT);
+        Keyboard.press(KEY_RIGHT_ARROW);
+        delay(70);
+        Keyboard.releaseAll();
+      }
+      else if (wheelMode == "rote")
+      {
+        Keyboard.press(KEY_LEFT_CTRL);
+        Keyboard.press(KEY_LEFT_SHIFT);
+        Keyboard.press(223);
+        delay(70);
+        Keyboard.releaseAll();
+      }
+      else if (wheelMode == "scal")
+      {
+        Keyboard.press(KEY_LEFT_CTRL);
+        Keyboard.press(KEY_LEFT_ALT);
+        Keyboard.press(KEY_RIGHT_ARROW);
+        delay(70);
+        Keyboard.releaseAll();
+      }
+      else if (wheelMode == "opac")
+      {
+        Keyboard.press(KEY_LEFT_CTRL);
+        Keyboard.press(KEY_LEFT_ALT);
+        Keyboard.press(KEY_RIGHT_ARROW);
+        delay(70);
+        Keyboard.releaseAll();
+      }
     }
     else
     {
@@ -459,7 +511,7 @@ void doubleThree()
 
     break;
   case 2:
-    //-------------
+    wheelMode = "keys";
     break;
   }
 }
@@ -751,7 +803,20 @@ void longSeven()
   }
 }
 
+//Buoon 8
 void singleEight()
+{
+  switch (mode)
+  {
+  case 1:
+    break;
+  case 2:
+    wheelMode = "easy";
+    break;
+  }
+}
+
+void doubleEight()
 {
   switch (mode)
   {
@@ -759,11 +824,49 @@ void singleEight()
     //-------------
     break;
   case 2:
-    //-------------
+    wheelMode = "easy";
+
+    Keyboard.press(202);
+    delay(70);
+    Keyboard.releaseAll();
     break;
   }
 }
 
+void tripleEight()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press('h');
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  }
+}
+
+void longEight()
+{
+  switch (mode)
+  {
+  case 1:
+    //-------------
+    break;
+  case 2:
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press(196);
+    delay(70);
+    Keyboard.releaseAll();
+    break;
+  }
+}
+
+//Button 9
 void singleNine()
 {
   switch (mode)
@@ -857,19 +960,6 @@ void doubleTwo()
   }
 }
 
-void doubleEight()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
 void doubleNine()
 {
   switch (mode)
@@ -898,19 +988,6 @@ void tripleTwo()
   }
 }
 
-void tripleEight()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
 void tripleNine()
 {
   switch (mode)
@@ -927,19 +1004,6 @@ void tripleNine()
 // Long Click
 
 void longTwo()
-{
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
-}
-
-void longEight()
 {
   switch (mode)
   {
