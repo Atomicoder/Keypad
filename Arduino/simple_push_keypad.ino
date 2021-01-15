@@ -598,7 +598,6 @@ void doubleFour()
     break;
   }
 }
-
 void tripleFour()
 {
   switch (mode)
