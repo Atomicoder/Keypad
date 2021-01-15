@@ -111,433 +111,136 @@ void loop()
   byte j;
 
   i = rotary1.rotate();
-
+  //Rot1 right direction
   if (i == 1)
   {
-    if (fineRor1 == true)
+
+    if (wheelMode == "time")
     {
-      if (wheelMode == "time")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_RIGHT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "easy")
-      {
-      //-------shorcut for the easy script 10x
-      }
-      else if (wheelMode == "keys")
-      {
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_RIGHT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "move")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_RIGHT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "rote")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "scal")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "opac")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_RIGHT_SHIFT);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
+      scrub(1);
     }
-    else
+    else if (wheelMode == "easy")
     {
-       if (wheelMode == "time")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_RIGHT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "easy")
-      {
-      //----------script easy x1
-      }
-      else if (wheelMode == "keys")
-      {
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(KEY_RIGHT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "move")
-      {
-        Keyboard.press(KEY_RIGHT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "rote")
-      {
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "scal")
-      {
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "opac")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
+      easyKey(1);
+    }
+    else if (wheelMode == "keys")
+    {
+      Keyframes(1);
+    }
+    else if (wheelMode == "move")
+    {
+      moveX(1);
+    }
+    else if (wheelMode == "rote")
+    {
+      scrub(1);
+    }
+    else if (wheelMode == "scal")
+    {
+      scrub(1);
+    }
+    else if (wheelMode == "opac")
+    {
+      scrub(1);
     }
   }
-
+  //Rot1 left direction
   if (i == 2)
   {
-    if (fineRor1 == true)
+    if (wheelMode == "time")
     {
-      if (wheelMode == "time")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_LEFT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "easy")
-      {
-      //-------shorcut for the easy script 10x
-      }
-      else if (wheelMode == "keys")
-      {
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_LEFT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "move")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_LEFT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "rote")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "scal")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "opac")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_RIGHT_SHIFT);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
+      scrub(0);
     }
-    else
+    else if (wheelMode == "easy")
     {
-       if (wheelMode == "time")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_LEFT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "easy")
-      {
-      //----------script easy x1
-      }
-      else if (wheelMode == "keys")
-      {
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(KEY_LEFT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "move")
-      {
-        Keyboard.press(KEY_LEFT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "rote")
-      {
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "scal")
-      {
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "opac")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
+      easyKey(0);
+    }
+    else if (wheelMode == "keys")
+    {
+      Keyframes(0);
+    }
+    else if (wheelMode == "move")
+    {
+      moveX(0);
+    }
+    else if (wheelMode == "rote")
+    {
+      rotate(0);
+    }
+    else if (wheelMode == "scal")
+    {
+      scale(0);
+    }
+    else if (wheelMode == "opac")
+    {
+      opacity(0);
     }
   }
 
   j = rotary2.rotate();
 
+  //Rot2 Right direction
   if (j == 1)
   {
-    if (fineRor2 == true)
+    if (wheelMode == "time")
     {
-      if (wheelMode == "time")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_RIGHT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "easy")
-      {
-      //-------shorcut for the easy script 10x
-      }
-      else if (wheelMode == "keys")
-      {
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(211);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "move")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_RIGHT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "rote")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "scal")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "opac")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_RIGHT_SHIFT);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
+      scrub(1);
     }
-    else
+    else if (wheelMode == "easy")
     {
-      if (wheelMode == "time")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_RIGHT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "easy")
-      {
-      //----------script easy x1
-      }
-      else if (wheelMode == "keys")
-      {
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(211);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "move")
-      {
-        Keyboard.press(KEY_UP_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "rote")
-      {
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "scal")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "opac")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(223);
-        delay(70);
-        Keyboard.releaseAll();
-      }
+      easyKey(1);
+    }
+    else if (wheelMode == "keys")
+    {
+      layerShift(1);
+    }
+    else if (wheelMode == "move")
+    {
+      moveY(1);
+    }
+    else if (wheelMode == "rote")
+    {
+      rotate(1);
+    }
+    else if (wheelMode == "scal")
+    {
+      scale(1);
+    }
+    else if (wheelMode == "opac")
+    {
+      opacity(1);
     }
   }
-
+  //Rot2 left direction
   if (j == 2)
   {
-    if (fineRor2 == true)
+    if (wheelMode == "time")
     {
-     if (wheelMode == "time")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_LEFT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "easy")
-      {
-      //-------shorcut for the easy script 10x
-      }
-      else if (wheelMode == "keys")
-      {
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(214);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "move")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_DOWN_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "rote")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "scal")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "opac")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_RIGHT_SHIFT);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
+      scrub(0);
     }
-    else
+    else if (wheelMode == "easy")
     {
-      if (wheelMode == "time")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_LEFT_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "easy")
-      {
-      //----------script easy x1
-      }
-      else if (wheelMode == "keys")
-      {
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(214);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "move")
-      {
-        Keyboard.press(KEY_DOWN_ARROW);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "rote")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "scal")
-      {
-        Keyboard.press(KEY_LEFT_SHIFT);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
-      else if (wheelMode == "opac")
-      {
-        Keyboard.press(KEY_LEFT_CTRL);
-        Keyboard.press(KEY_LEFT_ALT);
-        Keyboard.press(222);
-        delay(70);
-        Keyboard.releaseAll();
-      }
+      easyKey(0);
+    }
+    else if (wheelMode == "keys")
+    {
+      layerShift(0);
+    }
+    else if (wheelMode == "move")
+    {
+      moveY(0);
+    }
+    else if (wheelMode == "rote")
+    {
+      rotate(0);
+    }
+    else if (wheelMode == "scal")
+    {
+      scale(0);
+    }
+    else if (wheelMode == "opac")
+    {
+      opacity(0);
     }
   }
 
@@ -922,7 +625,6 @@ void longFour()
   case 2:
     Keyboard.press(KEY_LEFT_CTRL);
     Keyboard.press(KEY_LEFT_ALT);
-    Keyboard.press(KEY_LEFT_SHIFT);
     Keyboard.press('y');
     delay(70);
     Keyboard.releaseAll();
@@ -1111,7 +813,7 @@ void longSeven()
     //-------------
     break;
   case 2:
-      wheelMode = "opac";
+    wheelMode = "opac";
     break;
   }
 }
@@ -1340,4 +1042,161 @@ void longNine()
     //-------------
     break;
   }
+}
+
+//Functions rotaratory Encoders
+
+void scrub(int dir)
+{
+
+  Keyboard.press(KEY_LEFT_CTRL);
+  if (fineRor1)
+  {
+    Keyboard.press(KEY_LEFT_SHIFT);
+  }
+  if (dir == 1)
+  {
+    Keyboard.press(KEY_RIGHT_ARROW);
+  }
+  else
+  {
+    Keyboard.press(KEY_LEFT_ARROW);
+  }
+  delay(70);
+  Keyboard.releaseAll();
+}
+
+void Keyframes(int dir)
+{
+  Keyboard.press(KEY_LEFT_ALT);
+  if (fineRor1)
+  {
+    Keyboard.press(KEY_LEFT_SHIFT);
+  }
+  if (dir == 1)
+  {
+    Keyboard.press(KEY_RIGHT_ARROW);
+  }
+  else
+  {
+    Keyboard.press(KEY_LEFT_ARROW);
+  }
+  delay(70);
+  Keyboard.releaseAll();
+}
+
+void layerShift(int dir)
+{
+  Keyboard.press(KEY_LEFT_ALT);
+  if (fineRor2)
+  {
+    Keyboard.press(KEY_LEFT_SHIFT);
+  }
+  if (dir == 1)
+  {
+    Keyboard.press(214);
+  }
+  else
+  {
+    Keyboard.press(211);
+  }
+  delay(70);
+  Keyboard.releaseAll();
+}
+
+void moveX(int dir)
+{
+  if (fineRor1)
+  {
+    Keyboard.press(KEY_LEFT_SHIFT);
+  }
+  if (dir == 1)
+  {
+    Keyboard.press(KEY_RIGHT_ARROW);
+  }
+  else
+  {
+    Keyboard.press(KEY_LEFT_ARROW);
+  }
+  delay(70);
+  Keyboard.releaseAll();
+}
+
+void moveY(int dir)
+{
+  if (fineRor2)
+  {
+    Keyboard.press(KEY_LEFT_SHIFT);
+  }
+  if (dir == 1)
+  {
+    Keyboard.press(KEY_DOWN_ARROW);
+  }
+  else
+  {
+    Keyboard.press(KEY_UP_ARROW);
+  }
+  delay(70);
+  Keyboard.releaseAll();
+}
+
+void rotate(int dir)
+{
+  if (fineRor2)
+  {
+    Keyboard.press(KEY_LEFT_SHIFT);
+  }
+  if (dir == 1)
+  {
+    Keyboard.press(223);
+  }
+  else
+  {
+    Keyboard.press(222);
+  }
+  delay(70);
+  Keyboard.releaseAll();
+}
+
+void scale(int dir)
+{
+  Keyboard.press(KEY_LEFT_ALT);
+  if (fineRor2)
+  {
+    Keyboard.press(KEY_LEFT_SHIFT);
+  }
+  if (dir == 1)
+  {
+    Keyboard.press(223);
+  }
+  else
+  {
+    Keyboard.press(222);
+  }
+  delay(70);
+  Keyboard.releaseAll();
+}
+
+void opacity(int dir)
+{
+  Keyboard.press(KEY_LEFT_CTRL);
+  if (fineRor2)
+  {
+    Keyboard.press(KEY_LEFT_SHIFT);
+  }
+  Keyboard.press(KEY_LEFT_ALT);
+  if (dir == 1)
+  {
+    Keyboard.press(223);
+  }
+  else
+  {
+    Keyboard.press(222);
+  }
+  delay(70);
+  Keyboard.releaseAll();
+}
+
+void easyKey(int dir)
+{
 }
