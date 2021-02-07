@@ -717,7 +717,11 @@ void doubleSix()
     Keyboard.releaseAll();
     break;
   case 2:
-    //-------------
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.press('r');
+    delay(70);
+    Keyboard.releaseAll();
     break;
   }
 }
@@ -906,7 +910,10 @@ void singleTen()
     Keyboard.releaseAll();
     break;
   case 2:
-    //-------------
+      Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(225);
+    delay(70);
+    Keyboard.releaseAll();
     break;
   }
 }
@@ -922,7 +929,10 @@ void doubleTen()
     Keyboard.releaseAll();
     break;
   case 2:
-    //-------------
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(226);
+    delay(70);
+    Keyboard.releaseAll();
     break;
   }
 }
@@ -938,7 +948,10 @@ void tripleTen()
     Keyboard.releaseAll();
     break;
   case 2:
-    //-------------
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(227);
+    delay(70);
+    Keyboard.releaseAll();
     break;
   }
 }
@@ -954,7 +967,10 @@ void longTen()
     Keyboard.releaseAll();
     break;
   case 2:
-    //-------------
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(229);
+    delay(70);
+    Keyboard.releaseAll();
     break;
   }
 }
@@ -963,15 +979,6 @@ void longTen()
 
 void doubleTwo()
 {
-  switch (mode)
-  {
-  case 1:
-    //-------------
-    break;
-  case 2:
-    //-------------
-    break;
-  }
 }
 
 void doubleNine()
@@ -1198,4 +1205,15 @@ void opacity(int dir)
 
 void easyKey(int dir)
 {
+  Keyboard.press(KEY_LEFT_ALT);
+  if (dir == 1)
+  {
+    Keyboard.press('s');
+  }
+  else
+  {
+    Keyboard.press('a');
+  }
+  delay(70);
+  Keyboard.releaseAll();
 }
