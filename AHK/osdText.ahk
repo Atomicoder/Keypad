@@ -25,11 +25,25 @@ Return
 Return
 
 ^!Numpad4::
-    WinActivate ahk_class AE_CApplication_17.5 ahk_exe AfterFX.exe
+    IfWinNotExist ahk_class AE_CApplication_17.6 
+    {
+        WinActivate ahk_class AE_CApplication_17.6 ahk_exe AfterFX.exe
+    }
+    Else{
+
+    }
+    run AfterFX.exe
+
 Return
 
 ^!Numpad5::
-    WinActivate ahk_class illustrator
+    IfWinExist ahk_class illustrator
+    {
+        WinActivate ahk_class illustrator
+    }
+    else{
+        run "C:\Program Files\Adobe\Adobe Illustrator 2021\Support Files\Contents\Windows\Illustrator.exe"
+    }
 Return
 
 ^!Numpad6::
