@@ -8,7 +8,7 @@ Gui, Add, Text, vMyText cWhite, _____________ ; ______ serve to auto-size the wi
 ; Make all pixels of this color transparent and make the text itself translucent (150):1
 WinSet, TransColor,cWhite 200
 
-Gui, Show, x-500 y73 NoActivate ; NoActivate avoids deactivating the currently active window.
+Gui, Show, x200 y73 NoActivate ; NoActivate avoids deactivating the currently active window.
 Gui, Hide
 return
 
@@ -28,11 +28,12 @@ Return
     IfWinNotExist ahk_class AE_CApplication_17.6 
     {
         WinActivate ahk_class AE_CApplication_17.6 ahk_exe AfterFX.exe
+        WinMaximize
     }
     Else{
-
+        run AfterFX.exe
+        WinMaximize
     }
-    run AfterFX.exe
 
 Return
 
@@ -65,4 +66,3 @@ osdShow(comText){
     Gui, Hide
 
 }
-

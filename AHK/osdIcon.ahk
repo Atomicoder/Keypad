@@ -25,4 +25,4 @@ osdShow(comText){
     Gui, Hide
 
 }
-
+osdShow
